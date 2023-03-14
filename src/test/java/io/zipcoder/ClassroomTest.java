@@ -53,4 +53,17 @@ public class ClassroomTest {
 
         Assert.assertEquals(s2, actual);
     }
+
+    @Test
+    public void testRemoveStudent() {
+        Student s1 = new Student("Corey", "Mattox", new Double[]{150.0});
+        Student s2 = new Student("Reginald", "Schmidt", new Double[]{100.0});
+        Student s3 = new Student("Blake", "Urban", new Double[]{50.0});
+        Classroom c = new Classroom(5, s1, s2, s3);
+
+        c.removeStudent("Reginald", "Schmidt");
+        Student[] actual = c.getStudents();
+
+        Assert.assertEquals(s3, actual[1]);
+    }
 }

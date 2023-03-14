@@ -55,4 +55,19 @@ public class Classroom {
         }
         System.out.println("Error, class is full");
     }
+
+    public void removeStudent(String firstName, String lastName) {
+        int counter = 0;
+        for (int i = 0; i < students.length; i++) {
+            counter++;
+            if(students[i].getLastName().equals(lastName) && students[i].getFirstName().equals(firstName)){
+                students[i] = null;
+                break;
+            }
+        }
+        for (int i = counter-1; i < students.length-1; i++) {
+            students[i] = students[i+1];
+        }
+        students[students.length -1] = null;
+    }
 }

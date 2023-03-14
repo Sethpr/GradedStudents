@@ -52,6 +52,19 @@ public class Student {
     }
 
     public Double getAverageExamScore() {
-        return null;
+        double sum = 0;
+        for(Double d: scores){
+            sum+=d;
+        }
+        return sum/scores.length;
+    }
+
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append("Student Name: ").append(getFirstName()).append(" ").append(getLastName()).append("\n");
+        str.append("> Average Score: ").append(getAverageExamScore()).append("\n");
+        str.append("> ").append(getExamScores());
+
+        return String.valueOf(str);
     }
 }

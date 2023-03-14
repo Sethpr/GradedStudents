@@ -68,12 +68,13 @@ public class StudentTest {
         String lastName = "Hunter";
         Double[] examScores = { 100.0, 150.0, 250.0, 0.0 };
         Student student = new Student(firstName, lastName, examScores);
+        Double expected = 125.0;
 
         // When
         Double output = student.getAverageExamScore();
 
         // Then
-        System.out.println(output);
+        Assert.assertEquals(expected,output);
     }
 
     @Test
@@ -83,11 +84,16 @@ public class StudentTest {
         String lastName = "Hunter";
         Double[] examScores = { 100.0, 150.0, 250.0, 0.0 };
         Student student = new Student(firstName, lastName, examScores);
+        String expected = "Student Name: Leon Hunter\n> Average Score: 125.0\n> Exam Scores:\n" +
+                "\tExam 1: 100.0\n" +
+                "\tExam 2: 150.0\n" +
+                "\tExam 3: 250.0\n" +
+                "\tExam 4: 0.0\n";
 
         // When
         String output = student.toString();
 
         // Then
-        System.out.println(output);
+        Assert.assertEquals(expected,output);
     }
 }

@@ -1,6 +1,7 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Classroom {
     Student[] students;
@@ -22,7 +23,7 @@ public class Classroom {
         }
     }
 
-    public Student[] getStudentByScore(double score) { //come back and sort this
+    public Student[] getStudentByScore(double score) {
         ArrayList<Student> s = new ArrayList<>();
         for(Student stu: students){
             if(stu != null) {
@@ -31,6 +32,7 @@ public class Classroom {
                 }
             }
         }
+        Collections.sort(s);
         return s.toArray(new Student[0]);
     }
 

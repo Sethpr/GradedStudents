@@ -2,7 +2,7 @@ package io.zipcoder;
 
 import java.util.Arrays;
 
-public class Student {
+public class Student implements Comparable<Student> {
     String firstName;
     String lastName;
     Double[] scores;
@@ -66,5 +66,15 @@ public class Student {
         str.append("> ").append(getExamScores());
 
         return String.valueOf(str);
+    }
+
+    @Override
+    public int compareTo(Student s) {
+        if(s.getAverageExamScore() > this.getAverageExamScore()){
+            return -1;
+        } else if (s.getAverageExamScore() > this.getAverageExamScore()) {
+            return 1;
+        }
+        return 0;
     }
 }

@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class ClassroomTest {
     @Test
-    public void testGetStudentByScore() { //come back and sort this
+    public void testGetStudentByScore() {
         Student[] expected = new Student[1];
         expected[0] = new Student("John", "Doe", new Double[]{100.0});
         Classroom c = new Classroom(1, expected[0]);
